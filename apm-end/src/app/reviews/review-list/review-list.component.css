@@ -1,0 +1,30 @@
+.container {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+table {
+  align-items: baseline;
+  display: grid;
+  grid-template-columns: minmax(60px, 1fr) minmax(60px, 1fr) minmax(60px, 2fr);
+  grid-gap: 10px;
+  min-width: 100%;
+  text-align: left;
+}
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th {
+  color: #F15B2A;
+  font-weight: bold;
+  position: sticky;
+}
+
+td {
+  color: #6A5449;
+  text-align: left;
+}
