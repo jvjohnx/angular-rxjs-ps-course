@@ -2,7 +2,6 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { ProductData } from './products/product-data';
 import { ReviewData } from './reviews/review-data';
-import { ProductCategoryData } from './product-categories/product-category-data';
 
 // Required class for the In Memory Web API
 export class AppData implements InMemoryDbService {
@@ -12,8 +11,9 @@ export class AppData implements InMemoryDbService {
   // just as if the data were located on a backend server
   createDb() {
     const products = ProductData.products;
-    const productCategories = ProductCategoryData.categories;
+    const productCategories = ProductData.categories;
+    const suppliers = ProductData.suppliers;
     const reviews = ReviewData.reviews;
-    return { products, productCategories, reviews };
+    return { products, productCategories, suppliers, reviews };
   }
 }

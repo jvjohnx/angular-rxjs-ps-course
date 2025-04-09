@@ -34,6 +34,11 @@ export class ProductSelectionComponent {
     return '';
   });
 
+  // Suppliers for the selected product
+  // Join them into a single string
+  selectedProductSuppliers = this.productService.suppliersResource.value;
+  suppliers = computed(() => this.selectedProductSuppliers()?.map(s => s.name).join(', '));
+
   total = computed(() => (this.selectedProduct()?.price ?? 0) * this.quantity() );
   color = computed(() => this.total() > 200 ? 'green' : 'blue');
 
