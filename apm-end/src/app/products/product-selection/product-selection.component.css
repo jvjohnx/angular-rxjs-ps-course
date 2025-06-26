@@ -80,3 +80,9 @@ select>option {
   font-size: 18px;
   width:50px;
 }
+
+.help {
+  color: #F15B2A;
+  font-weight: bold;
+  padding: 0 0 20px 0;  
+}
