@@ -2,7 +2,7 @@ import { effect, inject, Injectable } from '@angular/core';
 import { ProductService } from '../products/product.service';
 import { HttpClient } from '@angular/common/http';
 import { Review } from './review';
-import { tap, map} from 'rxjs';
+import { tap, map } from 'rxjs';
 import { rxResource } from '@angular/core/rxjs-interop';
 
 @Injectable({
@@ -16,11 +16,11 @@ export class ReviewService {
   // Get data based on a signal
   // If the request signal is undefined, no http request is issued
   reviewsResource = rxResource({
-    request: this.productService.selectedProduct,
-    loader: ( param ) => 
-      this.http.get<Review[]>(`${this.reviewsUrl}?productId=^${param.request?.id}$`).pipe(
-        map(items => items.sort((a,b) => a.title < b.title ? -1 : 0)
-      )),
+    params: this.productService.selectedProduct,
+    stream: (p) =>
+      this.http.get<Review[]>(`${this.reviewsUrl}?productId=^${p.params?.id}$`).pipe(
+        map(items => items.sort((a, b) => a.title < b.title ? -1 : 0)
+        )),
     defaultValue: []
   });
 

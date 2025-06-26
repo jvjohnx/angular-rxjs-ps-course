@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, importProvidersFrom, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -8,12 +8,12 @@ import { AppData } from './app-data';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
     provideRouter(routes),
     provideHttpClient(),
-    // passThruUnknownUrl: true
     importProvidersFrom(
-      InMemoryWebApiModule.forRoot(AppData, { delay: 1000 })
+      InMemoryWebApiModule.forRoot(AppData, { delay: 1000, passThruUnknownUrl: true })
     )
   ]
 };

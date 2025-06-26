@@ -1,11 +1,12 @@
 <div class="container">
-  @if (reviews()?.length) {
+  @if (reviews().length) {
     <table>
+      <caption>Product Reviews</caption>
       <thead>
         <tr>
           <th>Title</th>
-          <th>Username</th>
           <th>Review</th>
+          <th>Username</th>
         </tr>
       </thead>
       <tbody>
@@ -15,10 +16,10 @@
               {{ review.title }}
             </td>
             <td>
-              {{ review.userName }}
+              {{ review.text }}
             </td>
             <td>
-              {{ review.text }}
+              {{ review.userName }}
             </td>
           </tr>
         }
