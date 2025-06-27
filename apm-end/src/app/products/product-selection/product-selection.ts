@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 import { ProductService } from '../product.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ReviewListComponent } from '../../reviews/review-list/review-list.component';
+import { ReviewList } from '../../reviews/review-list/review-list';
 import { fromEvent } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -11,11 +11,11 @@ import { SupplierService } from '../../suppliers/supplier.service';
 
 @Component({
   selector: 'app-product-selection',
-  imports: [FormsModule, CurrencyPipe, ReviewListComponent],
-  templateUrl: './product-selection.component.html',
-  styleUrl: './product-selection.component.css'
+  imports: [FormsModule, CurrencyPipe, ReviewList],
+  templateUrl: './product-selection.html',
+  styleUrl: './product-selection.css'
 })
-export class ProductSelectionComponent {
+export class ProductSelection {
   pageTitle = 'Product Selection'
   private productService = inject(ProductService);
   private supplierService = inject(SupplierService);

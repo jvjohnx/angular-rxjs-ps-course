@@ -1,8 +1,6 @@
 import { HttpClient, httpResource } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { Product, ProductCategory, Supplier } from './product';
-import { forkJoin, map, of, tap } from 'rxjs';
-import { rxResource } from '@angular/core/rxjs-interop';
+import { Product, ProductCategory } from './product';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +14,8 @@ export class ProductService {
   selectedProduct = signal<Product | undefined>(undefined);
 
   // With httpResource
-  productsResource = httpResource<Product[]>(this.productsUrl);
-  productCategoriesResource = httpResource<ProductCategory[]>(this.productCategoriesUrl);
+  productsResource = httpResource<Product[]>(() => this.productsUrl);
+  productCategoriesResource = httpResource<ProductCategory[]>(() => this.productCategoriesUrl);
   products = computed(() =>
     this.productsResource.value() && this.productCategoriesResource.value()
       ? this.productsResource.value()!.map(

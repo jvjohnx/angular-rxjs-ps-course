@@ -11,5 +11,6 @@ export class ReviewList {
   private reviewService = inject(ReviewService);
 
   reviews = this.reviewService.reviewsResource.value;
+  // reviews = this.reviewService.reviews;
   isLoading = this.reviewService.reviewsResource.isLoading;
 }
