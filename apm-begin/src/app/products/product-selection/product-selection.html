@@ -31,20 +31,6 @@
         <div class="cellLeft">Price:</div>
         <div class="cellRight">{{selectedProduct()?.price | currency}}</div>
       </div>
-      <div class="row">
-        <div class="cellLeft"><label for='quantity'>Quantity:</label></div>
-        <div class="cellRight">
-          <div class="inputContainer">
-            <button class="qtyButton qtyButtonLeft" (click)="onDecrease()">-</button>
-            <input class="quantityInput" id='quantity' type='number' [(ngModel)]='quantity'>
-            <button class="qtyButton qtyButtonRight" (click)="onIncrease()">+</button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="cellLeft">Total: </div>
-        <div class="cellRight" [style.color]="color()">{{total() | currency}}</div>
-      </div>
     </div>
     <app-review-list/>
   }

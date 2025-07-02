@@ -50,32 +50,6 @@
   grid-column: 2 / 3;
 }
 
-.inputContainer {
-  display: inline-block;
-}
-
-.qtyButton {
-  background-color: #F15B2A;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-  height: 28px;
-  width: 24px;
-}
-
-.qtyButtonLeft {
-  float: left;
-  margin-right: 2px;
-}
-
-.qtyButtonRight {
-  float: right;
-  margin-left: 2px;
-}
-
 select {
   color: #6A5449;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -90,9 +64,8 @@ select>option {
   font-size: 18px;
 }
 
-.quantityInput[type="number"] {
-  color: #6A5449;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
-  width:50px;
+.help {
+  color: #F15B2A;
+  font-weight: bold;
+  padding: 0 0 20px 0;  
 }

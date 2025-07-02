@@ -4,4 +4,5 @@ export interface Product {
   productName: string;
   description: string;
   price: number;
+  supplierIds?: number[];
 }
