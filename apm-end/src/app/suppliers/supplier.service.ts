@@ -15,10 +15,10 @@ export class SupplierService {
 
   // Retrieve each supplier for the selected product
   supplierIds = computed(() => 
-    this.productService.selectedProduct()?.supplierIds ?? []);
+    this.productService.selectedProduct()?.supplierIds);
 
   suppliersResource = rxResource({
-    params: () => this.supplierIds().length ? this.supplierIds() : undefined,
+    params: () => this.supplierIds()?.length ? this.supplierIds() : undefined,
     stream: p => forkJoin(p.params.map(
       supplierId => this.http.get<Supplier>(`${this.suppliersUrl}/${supplierId}`)
     )),

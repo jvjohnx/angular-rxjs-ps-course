@@ -23,7 +23,7 @@ export class ProductSelection {
   showHelp = signal(false);
   questionMark$ = fromEvent<KeyboardEvent>(document, 'keydown').pipe(
     map(event => event.key),
-    tap(key => console.log(key)),
+    // tap(key => console.log(key)),
     filter(key => key === '?' || key === 'Escape'),
     tap(key => this.showHelp.set(key === '?')),
     takeUntilDestroyed()

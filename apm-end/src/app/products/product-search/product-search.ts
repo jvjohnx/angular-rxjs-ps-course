@@ -19,6 +19,7 @@ export class ProductSearch {
   errorMessage = computed(() => this.error() ? this.error()?.message : '');
 
   selectedProduct = this.productService.selectedProduct;
+
   onSelected(clickedProduct: Product) {
     this.selectedProduct.set(clickedProduct);
   }
