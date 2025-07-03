@@ -8,10 +8,11 @@ import { fromEvent } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SupplierService } from '../../suppliers/supplier.service';
+import { ProductSearch } from '../product-search/product-search';
 
 @Component({
   selector: 'app-product-selection',
-  imports: [FormsModule, CurrencyPipe, ReviewList],
+  imports: [FormsModule, CurrencyPipe, ReviewList, ProductSearch],
   templateUrl: './product-selection.html',
   styleUrl: './product-selection.css'
 })
@@ -31,12 +32,8 @@ export class ProductSelection {
   sub = this.questionMark$.subscribe();
 
   selectedProduct = this.productService.selectedProduct;
-  quantity = linkedSignal({
-    source: this.selectedProduct,
-    computation: p => 1
-  });
 
-  products = this.productService.products;
+  products = this.productService.productsResource.value;
   isLoading = this.productService.productsResource.isLoading;
   error = this.productService.productsResource.error;
   errorMessage = computed(() => {
@@ -53,9 +50,4 @@ export class ProductSelection {
   // but this is fine for our purposes
   selectedProductSuppliers = this.supplierService.suppliersResource.value;
   suppliers = computed(() => this.selectedProductSuppliers()?.map(s => s.name).join(', '));
-
-  total = computed(() => (this.selectedProduct()?.price ?? 0) * this.quantity());
-  color = computed(() => this.total() > 200 ? 'green' : 'blue');
-
-  qtyEffect = effect(() => console.log('quantity:', this.quantity()));
 }

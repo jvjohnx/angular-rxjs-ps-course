@@ -24,20 +24,13 @@ export class ReviewService {
     defaultValue: []
   });
 
-  // Using httpResource
-  // reviewsResource = httpResource<Review[]>(() => {
-  //   const p = this.productService.selectedProduct();
-  //   if (p) {
-  //     return `${this.reviewsUrl}?productId=^${p.id}$`;
-  //   } else {
-  //     return undefined;
-  //   }
-  // },
+  // Retrieve data into a signal
+  // Use appropriate regular expression syntax to get an exact match on the id
+  // Otherwise an id = 1 will match 10, 11, ... 100, 101, etc.
+  // reviewsResource = httpResource<Review[]>(() => 
+  //   this.productService.selectedProduct() ? 
+  //     `${this.reviewsUrl}?productId=^${this.productService.selectedProduct()?.id}$` : undefined,
   //   { defaultValue: [] }
   // );
-  // Sort the reviews
-  // reviews = computed(() => this.reviewsResource.value().sort((a, b) => 
-  //   a.title < b.title ? -1 : 0));
 
-  eff = effect(() => console.log('loading reviews', this.reviewsResource.isLoading()));
 }

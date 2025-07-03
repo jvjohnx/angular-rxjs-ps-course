@@ -25,7 +25,7 @@
         }
       </tbody>
     </table>
-  } @else if (!isLoading()) {
+  } @else if (selectedProduct() && !isLoading()) {
     <div>No reviews found for the selected product</div>
   }
 </div>

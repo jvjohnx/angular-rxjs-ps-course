@@ -17,13 +17,14 @@ export class SupplierService {
   suppliersResource = rxResource({
     params: this.productService.selectedProduct,
     stream: ((p) => {
-      if (p.params?.supplierIds) {
-        return forkJoin(p.params?.supplierIds.map(supplierId =>
+      if (p.params.supplierIds?.length) {
+        return forkJoin(p.params.supplierIds.map(supplierId =>
           this.http.get<Supplier>(`${this.suppliersUrl}/${supplierId}`)))
       } else {
         return of([]);
       }
-    })
+    }),
+    defaultValue: []
   });
 
   eff = effect(() => console.log('loading suppliers', this.suppliersResource.isLoading()));
