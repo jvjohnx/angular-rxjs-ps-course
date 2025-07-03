@@ -1,8 +1,7 @@
-import { Component, computed, effect, inject, linkedSignal, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 import { ProductService } from '../product.service';
-import { HttpErrorResponse } from '@angular/common/http';
 import { ReviewList } from '../../reviews/review-list/review-list';
 import { fromEvent } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
@@ -36,13 +35,7 @@ export class ProductSelection {
   products = this.productService.productsResource.value;
   isLoading = this.productService.productsResource.isLoading;
   error = this.productService.productsResource.error;
-  errorMessage = computed(() => {
-    const err = this.error() as HttpErrorResponse;
-    if (err) {
-      return `${err.status} - ${err.statusText}: ${err.url}`
-    }
-    return '';
-  });
+  errorMessage = computed(() => this.error() ? this.error()?.message : '');
 
   // Suppliers for the selected product
   // Join them into a single string

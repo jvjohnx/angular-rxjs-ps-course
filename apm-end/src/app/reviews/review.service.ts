@@ -24,7 +24,9 @@ export class ReviewService {
     defaultValue: []
   });
 
-  // Retrieve data into a signal
+  // *** Additional examples ***
+
+  // With httpResource (Not used)
   // Use appropriate regular expression syntax to get an exact match on the id
   // Otherwise an id = 1 will match 10, 11, ... 100, 101, etc.
   // reviewsResource = httpResource<Review[]>(() => 

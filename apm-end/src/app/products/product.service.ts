@@ -50,7 +50,7 @@ export class ProductService {
   });
   eff = effect(() => console.log('found products', this.foundProducts().map(x => x.productName)));
 
-  // *** Additional example ***
+  // *** Additional examples ***
 
   // With httpClient (Not used)
   // The component must then subscribe to this observable
@@ -66,7 +66,7 @@ export class ProductService {
   // No subscription or observable required
   productsResourceHTTP = httpResource<Product[]>(() => this.productsUrl, { defaultValue: [] });
 
-  // Retrieve a single product (Not used)
+  // Retrieve a single product and map name (Not used)
   productResource = rxResource({
     params: this.selectedProduct,
     stream: (p) =>
@@ -74,8 +74,7 @@ export class ProductService {
         map(p => ({
           ...p,
           productName: p.productName.toUpperCase()
-        })),
-        tap(p => console.log(JSON.stringify(p)))
+        }))
       )
   });
 
