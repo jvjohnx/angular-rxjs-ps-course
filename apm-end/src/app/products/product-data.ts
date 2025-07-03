@@ -1,4 +1,4 @@
-import { Product, ProductCategory } from './product';
+import { Product } from './product';
 
 export class ProductData {
 
@@ -8,7 +8,6 @@ export class ProductData {
       productName: 'Leaf Rake',
       description: 'Leaf rake with 48-inch wooden handle',
       price: 19.95,
-      categoryId: 1,
       supplierIds: [1, 2]
     },
     {
@@ -16,15 +15,13 @@ export class ProductData {
       productName: 'Garden Cart',
       description: '15 gallon capacity rolling garden cart',
       price: 32.99,
-      categoryId: 1,
-      supplierIds: [3, 4]
+      supplierIds: []
     },
     {
       id: 5,
       productName: 'Hammer',
       description: 'Curved claw steel hammer',
       price: 8.9,
-      categoryId: 3,
       supplierIds: [5, 6]
     },
     {
@@ -32,7 +29,6 @@ export class ProductData {
       productName: 'Saw',
       description: '15-inch steel blade hand saw',
       price: 11.55,
-      categoryId: 3,
       supplierIds: [7, 8]
     },
     {
@@ -40,23 +36,7 @@ export class ProductData {
       productName: 'Video Game Controller',
       description: 'Standard two-button video game controller',
       price: 35.95,
-      categoryId: 5,
       supplierIds: [9, 10]
-    }
-  ];
-
-  static categories: ProductCategory[] = [
-    {
-      id: 1,
-      name: 'Garden'
-    },
-    {
-      id: 3,
-      name: 'Toolbox'
-    },
-    {
-      id: 5,
-      name: 'Gaming'
     }
   ];
 

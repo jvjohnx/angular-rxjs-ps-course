@@ -4,12 +4,5 @@ export interface Product {
   productName: string;
   description: string;
   price: number;
-  categoryId: number;
-  category?: string;
   supplierIds?: number[];
-}
-
-export interface ProductCategory {
-  id: number;
-  name: string;
 }

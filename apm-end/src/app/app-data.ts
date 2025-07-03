@@ -12,9 +12,8 @@ export class AppData implements InMemoryDbService {
   // just as if the data were located on a backend server
   createDb() {
     const products = ProductData.products;
-    const productCategories = ProductData.categories;
     const suppliers = SupplierData.suppliers;
     const reviews = ReviewData.reviews;
-    return { products, productCategories, suppliers, reviews };
+    return { products, suppliers, reviews };
   }
 }
