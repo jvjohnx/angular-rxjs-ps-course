@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     importProvidersFrom(
-      InMemoryWebApiModule.forRoot(AppData, { delay: 1000, passThruUnknownUrl: true })
+      InMemoryWebApiModule.forRoot(AppData, { delay: 200, passThruUnknownUrl: true })
     )
   ]
 };

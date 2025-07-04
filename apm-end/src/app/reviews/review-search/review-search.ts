@@ -13,7 +13,7 @@ export class ReviewSearch {
   private reviewService = inject(ReviewService);
 
   // Search feature
-  searchText = this.reviewService.searchText;
+  enteredSearch = this.reviewService.enteredSearch;
 
   // Review data
   reviews = this.reviewService.reviewSearchResource.value;
