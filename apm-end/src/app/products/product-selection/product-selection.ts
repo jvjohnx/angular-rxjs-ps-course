@@ -7,11 +7,10 @@ import { fromEvent } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SupplierService } from '../../suppliers/supplier.service';
-import { ProductSearch } from '../product-search/product-search';
 
 @Component({
   selector: 'app-product-selection',
-  imports: [FormsModule, CurrencyPipe, ReviewList, ProductSearch],
+  imports: [FormsModule, CurrencyPipe, ReviewList],
   templateUrl: './product-selection.html',
   styleUrl: './product-selection.css'
 })

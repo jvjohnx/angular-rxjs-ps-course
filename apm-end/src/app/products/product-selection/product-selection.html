@@ -18,13 +18,12 @@
     <div class="grid">
       <div class="row">
         <div class="cellFull">
-          <!-- <select [(ngModel)]="selectedProduct">
+          <select [(ngModel)]="selectedProduct">
             <option value="undefined" selected>--Select a product--</option>
             @for (product of products(); track product.id) {
               <option [ngValue]="product">{{ product.productName }}</option>
             }
-          </select> -->
-          <app-product-search/>
+          </select>
         </div>
       </div>
       <div class="row">

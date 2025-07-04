@@ -1,8 +1,8 @@
 import { HttpClient, httpResource } from '@angular/common/http';
-import { effect, inject, Injectable, linkedSignal, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Product } from './product';
-import { rxResource, toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { catchError, debounceTime, distinctUntilChanged, map, of, startWith, tap } from 'rxjs';
+import { rxResource } from '@angular/core/rxjs-interop';
+import { catchError, map, of, startWith } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,7 @@ export class ProductService {
   private http = inject(HttpClient);
 
   // Shared signals
-  productSearch = signal<String | undefined>(undefined);
-  // selectedProduct = signal<Product | undefined>(undefined);
-  // When the search changes, reset the selected product
-  selectedProduct = linkedSignal<String | undefined, Product | undefined>({
-    source: this.productSearch,
-    computation: () => undefined
-  });
+  selectedProduct = signal<Product | undefined>(undefined);
 
   // With rxResource
   // No subscription required
@@ -28,27 +22,6 @@ export class ProductService {
     ),
     defaultValue: []
   });
-
-  // Support for the search feature
-  searchText$ = toObservable(this.productSearch).pipe(
-    tap(x => console.log('Entered char', x)),
-    debounceTime(400),
-    distinctUntilChanged(),
-    tap(x => console.log('For HTTP request', x))
-  );
-  productSearchResource = rxResource({
-    params: toSignal(this.searchText$),
-    stream: (p) =>
-      this.http.get<Product[]>(`${this.productsUrl}?productName=${p.params}`).pipe(
-        map(items => items.sort((a, b) => a.productName < b.productName ? -1 : 0))
-      ),
-    defaultValue: []
-  });
-  foundProducts = linkedSignal<Product[], Product[]>({
-    source: this.productSearchResource.value,
-    computation: (products, previous) => (products.length || !previous) ? products : previous?.value
-  });
-  eff = effect(() => console.log('found products', this.foundProducts().map(x => x.productName)));
 
   // *** Additional examples ***
 
