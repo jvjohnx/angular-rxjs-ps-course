@@ -25,13 +25,13 @@ export class ProductService {
 
   // *** Additional examples ***
 
-  // With httpClient (Not used)
+  // With HttpClient (Not used)
   // The component must then subscribe to this observable
   products$ = this.http.get<Product[]>(this.productsUrl).pipe(
-    startWith([]),    // Provide an initial empty array
+    startWith([]),
     catchError(error => {
       console.error('Error loading products', error);
-      return of([]);  // On error return an empty array
+      return of([]);
     })
   );
 
@@ -50,6 +50,5 @@ export class ProductService {
         }))
       )
   });
-
 
 }

@@ -18,8 +18,18 @@ export class ProductSelection {
   private productService = inject(ProductService);
   private supplierService = inject(SupplierService);
 
+  // Hide/show the help message
+  showHelp = signal(false);
+  questionMark$ = fromEvent<KeyboardEvent>(document, 'keydown').pipe(
+    map(event => event.key),
+    // tap(key => console.log(key)),
+    filter(key => key === '?' || key === 'Escape'),
+    tap(key => this.showHelp.set(key === '?')),
+    takeUntilDestroyed()
+  );
+  sub = this.questionMark$.subscribe();
 
-  // Signals used by the template
+  // Shared signals
   selectedProduct = this.productService.selectedProduct;
 
   // Reference the resource properties
@@ -30,9 +40,6 @@ export class ProductSelection {
 
   // Suppliers for the selected product
   // Join them into a single string
-  // Could instead make these links to supplier details, 
-  // but this is fine for our purposes
   selectedProductSuppliers = this.supplierService.suppliersResource.value;
-  suppliers = computed(() => this.selectedProductSuppliers()?.map(s => s.name).join(', '));
-
+  suppliers = computed(() => this.selectedProductSuppliers().map(s => s.name).join(', '));
 }
