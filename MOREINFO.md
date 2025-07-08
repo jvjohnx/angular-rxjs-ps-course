@@ -8,9 +8,9 @@ Here are clickable links to more information about RxJS in Angular.
 [Introduction to Git and GitHub](https://youtu.be/pICJdbC7j0Q) - If you are new to GitHub and want info on how to download these project files or use Git and GitHub for your projects
 
 ## Module 1: Reactive Programming with RxJS and Signals
-["Angular: Signals](https://www.pluralsight.com/library/courses/angular-signals) - The Pluralsight course that introduces signals and is a great precursor to this course.
+["Angular: Signals"](https://www.pluralsight.com/library/courses/angular-signals) - The Pluralsight course that introduces signals and is a great precursor to this course.
 
-[RxJS documentation]((https://rxjs-dev.firebaseapp.com/) - Official RxJS documentation
+[RxJS documentation](https://rxjs-dev.firebaseapp.com/) - Official RxJS documentation
 
 ## Module 2: ***
 
