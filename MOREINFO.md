@@ -3,7 +3,7 @@
 Here are clickable links to more information about RxJS in Angular.
 
 ## General
-["Angular: RxJS for Reactive Programming"]() - The Pluralsight course that provides details of using RxJS in today's Angular applications and walks through the RxJS code in this repository.
+["Angular: RxJS for Reactive Programming"]() - The Pluralsight course that details how best to use RxJS in today's Angular applications and walks through the RxJS code in this repository.
 
 [Introduction to Git and GitHub](https://youtu.be/pICJdbC7j0Q) - If you are new to GitHub and want info on how to download these project files or use Git and GitHub for your projects
 
@@ -14,15 +14,22 @@ Here are clickable links to more information about RxJS in Angular.
 
 ## Module 2: ***
 
-[JavaScript Functions](https://youtu.be/j8oAbRAlcyE) - For more information on arrow functions in JavaScript
+["Angular: Signals"](https://www.pluralsight.com/library/courses/angular-signals) - Pluralsight course that introduces signals and is a great precursor to this course.
 
-[Angular's New Template Syntax: Control Flow](https://youtu.be/j9VTGRGyE-o) - For more information on the new template block syntax
+[Angular's New Template Syntax: Control Flow](https://youtu.be/j9VTGRGyE-o) - For more information on the new template block syntax.
 
 [Angular's New `@for` Block Features](https://youtu.be/ooHPDCLMyXs)
 
 [Declare Variables in Templates: Angular's New `@let` Declaration](https://youtu.be/tIi9304sjEI)
 
 [Automatically Migrate to Angular's New Control Flow Template Syntax](https://youtu.be/fkAFHMhjJsQ)
+
+["Angular: Components and Template Syntax"]() - Pluralsight course that covers the "new" template block syntax, called "control flow".
+
+***
+
+[JavaScript Functions](https://youtu.be/j8oAbRAlcyE) - For more information on arrow functions in JavaScript
+
 
 [Angular Injection Context Explained](https://youtu.be/rsLW9znsp4E) - An effect runs within the injection context, explained in this video
 
