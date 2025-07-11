@@ -12,7 +12,7 @@ Here are clickable links to more information about RxJS in Angular.
 
 [RxJS documentation](https://rxjs-dev.firebaseapp.com/) - Official RxJS documentation
 
-## Module 2: ***
+## Module 2: Reacting to Events
 
 ["Angular: Signals"](https://www.pluralsight.com/library/courses/angular-signals) - Pluralsight course that introduces signals and is a great precursor to this course.
 
@@ -26,22 +26,16 @@ Here are clickable links to more information about RxJS in Angular.
 
 ["Angular: Components and Template Syntax"]() - Pluralsight course that covers the "new" template block syntax, called "control flow".
 
-***
-
 [JavaScript Functions](https://youtu.be/j8oAbRAlcyE) - For more information on arrow functions in JavaScript
 
+[Angular Injection Context Explained](https://youtu.be/rsLW9znsp4E)
 
-[Angular Injection Context Explained](https://youtu.be/rsLW9znsp4E) - An effect runs within the injection context, explained in this video
+## Module 3: RxJS Operators and Pipelines
 
-## Module 3: ***
+[RxJS Documentation](https://rxjs.dev/api) - Includes a list of all RxJS operators
 
-[Building a shopping cart using `computed()` signals](https://youtu.be/kczkl2HndJg)
+***
 
-[First Look at Angular's new linkedSignal()](https://youtu.be/hFR3gVIY9gM) - Additional `linkedSignal()` examples, including how to use the source property to specify multiple dependent signals
-
-[Angular documentation for computed()](https://angular.dev/guide/signals#computed-signals)
-
-[Angular documentation for linkedSignal()](https://angular.dev/guide/signals/linked-signal#)
 
 ## Module 4: Retrieving Data into a Signal
 
