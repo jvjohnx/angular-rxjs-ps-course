@@ -1,16 +1,19 @@
 # Links to More Information
 
+RxJS with its observables and operators, continues to play an important role in today's Angular. Even with the rise of Signals and the Resource API, RxJS remains essential for handling asynchronous data streams and building reactive, event-driven applications.
+
 Here are clickable links to more information about RxJS in Angular.
 
 ## General
-["Angular: RxJS for Reactive Programming"]() - The Pluralsight course that details how best to use RxJS in today's Angular applications and walks through the RxJS code in this repository.
+["Angular: RxJS for Reactive Programming"]() - This Pluralsight course details how best to use RxJS in today's Angular applications and walks through the RxJS code in this repository.
 
-[]() - This Pluralsight course that covers many more RxJS concepts, operators, and techniques.
+["RxJS and Angular Signals Fundamentals"](https://www.pluralsight.com/library/courses/rxjs-angular-signals-fundamentals) - This Pluralsight course covers many more RxJS concepts, operators, and techniques. And demonstrates how to use HttpClient with signals.
+
+["Angular: Signals"](https://www.pluralsight.com/library/courses/angular-signals) - This Pluralsight course introduces signals and is a great precursor to the "Angular: RxJS for Reactive Programming" course.
 
 [Introduction to Git and GitHub](https://youtu.be/pICJdbC7j0Q) - If you are new to GitHub and want info on how to download these project files or use Git and GitHub for your projects.
 
 ## Module 1: Reactive Programming with RxJS and Signals
-["Angular: Signals"](https://www.pluralsight.com/library/courses/angular-signals) - The Pluralsight course that introduces signals and is a great precursor to this course.
 
 [RxJS documentation](https://rxjs-dev.firebaseapp.com/) - Official RxJS documentation.
 
