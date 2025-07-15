@@ -68,3 +68,7 @@ Here are clickable links to more information about RxJS in Angular.
 [Debouncing with the Resource API](https://youtu.be/5A1I6rpe8UA) - When implementing a search feature, we don't want to issue an http request for each character the user types.
 
 [Stale data? Refresh it!](https://youtu.be/sY4ofhfQ_pk) - Using the Resource API refresh feature
+
+## Module 6: ***
+
+injection context
