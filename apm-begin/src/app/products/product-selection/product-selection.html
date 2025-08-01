@@ -3,6 +3,13 @@
     {{pageTitle}}
   </div>
 
+  @if (showHelp()) {
+  <div class="help">
+    <div>Select a product to see details, suppliers and reviews</div>
+    <div>Press Esc to close this message</div>
+  </div>
+  }
+
   @if (isLoading()) {
     <div>...loading products</div>
   } @else if (errorMessage()) {

@@ -6,7 +6,8 @@ import { ProductService } from '../../products/product.service';
   selector: 'app-review-list',
   imports: [],
   templateUrl: './review-list.html',
-  styleUrl: './review-list.css'
+  styleUrl: './review-list.css',
+  standalone: true
 })
 export class ReviewList {
   private reviewService = inject(ReviewService);
