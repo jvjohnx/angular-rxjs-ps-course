@@ -4,6 +4,7 @@ import {CurrencyPipe} from '@angular/common';
 import {ProductService} from '../product.service';
 import {ReviewList} from '../../reviews/review-list/review-list';
 import {filter, fromEvent, map, tap} from 'rxjs';
+import {SupplierService} from '../../suppliers/supplier.service';
 
 @Component({
   selector: 'app-product-selection',
@@ -15,6 +16,8 @@ import {filter, fromEvent, map, tap} from 'rxjs';
 export class ProductSelection {
   pageTitle = 'Product Selection';
   private productService = inject(ProductService);
+
+  private supplierService = inject(SupplierService);
 
   showHelp = signal(false);
 
@@ -35,5 +38,8 @@ export class ProductSelection {
   isLoading = this.productService.productsResource.isLoading;
   error = this.productService.productsResource.error;
   errorMessage = computed(() => this.error() ? this.error()?.message : '');
+
+  selectedProductSuppliers = this.supplierService.supplierResource.value;
+  suppliers = computed(() => this.selectedProductSuppliers().map(s => s.name).join(', '));
 
 }
